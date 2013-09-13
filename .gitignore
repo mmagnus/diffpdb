@@ -1,0 +1,9 @@
+.pyc
+*~
+*.pyc
+.ropeproject
+.Rhistory
+*#*
+moderna.log
+*flymake.py
+*.out
