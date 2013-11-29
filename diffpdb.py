@@ -12,8 +12,10 @@ Configuration:
 import sys
 import os
 
-# Configuration
-DIFF_TOOL = 'kompare'
+try:
+    from diffpdb_conf import DIFF_TOOL
+except ImportError:
+    DIFF_TOOL = 'diff'
 
 
 def do_file(fn):
