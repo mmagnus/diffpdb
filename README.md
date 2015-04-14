@@ -16,4 +16,4 @@ Configuration:
 
  * DIFF_TOOL, set up what tool would you like to use to diff files (e.g. `diff` or `kompare` etc.)
 
-![screenshot](doc/screenshota.png)
+![screenshot](screenshot.png)
