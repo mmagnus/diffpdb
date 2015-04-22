@@ -1,13 +1,21 @@
 diffpdb
 -------------------------------------------------------------------------------
 
-    diffpdb.py - compare PDB files line by line, v.01
-       usage: python ./diffpdb.py <f1.pdb> <f2.pdb>
+    $ ./diffpdb.py -h
+    usage: diffpdb.py [-h] [--names] f1 f2
+    
+    positional arguments:
+      f1          file
+      f2          file
+    
+    optional arguments:
+      -h, --help  show this help message and exit
+      --names     take only atom residues names
 
-The method is very, very simple. 
+The method is quick-and-dirty, but works!
 
-The script takes first 31 characters of lines starting with 
-'HETATM' or 'ATOM' and save these lines to a <filename>.out file.
+The script takes first 31 characters of lines (or only atom names and residue names)
+starting with 'HETATM' or 'ATOM' and save these lines to a <filename>.out file.
 
 One file is created per pdb. In the final step DIFF_TOOL is executed
  on these two output files. You get a diff output. That's it! Enjoy!
@@ -16,4 +24,9 @@ Configuration:
 
  * DIFF_TOOL, set up what tool would you like to use to diff files (e.g. `diff` or `kompare` etc.)
 
-![screenshot](screenshot.png)
+![screenshot](doc/screenshot.png)
+
+`./diffpdb.py --names test_data/4/1duq.pdb test_data/4/1duq_decoy0171_amb_clx.pdb`
+
+![screenshot](doc/screenshot2.png)
+
