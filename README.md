@@ -1,4 +1,4 @@
-diffpdb
+diffpdb - a simple tool to compare text-content of PDB files
 -------------------------------------------------------------------------------
 
     $ ./diffpdb.py -h
