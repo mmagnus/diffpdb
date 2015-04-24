@@ -2,7 +2,7 @@ diffpdb - a simple tool to compare text-content of PDB files
 -------------------------------------------------------------------------------
 
     $ ./diffpdb.py -h
-    usage: diffpdb.py [-h] [--names] f1 f2
+    usage: diffpdb.py [-h] [--names] [--htmlout] f1 f2
     
     positional arguments:
       f1          file
@@ -11,6 +11,7 @@ diffpdb - a simple tool to compare text-content of PDB files
     optional arguments:
       -h, --help  show this help message and exit
       --names     take only atom residues names
+      --htmlout   take only atom residues names
 
 The method is quick-and-dirty, but works!
 
@@ -30,3 +31,6 @@ Configuration:
 
 ![screenshot](doc/screenshot2.png)
 
+## Features
+
+- [X] htmlout, based on (http://git.droids-corp.org/?p=diff2html.git;a=summary)

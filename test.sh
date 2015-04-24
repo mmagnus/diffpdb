@@ -6,6 +6,10 @@ echo 'test #1'
 echo
 echo 'test #2'
 ./diffpdb.py 'test_data/2/str1.pdb' 'test_data/2/str2.pdb'
+
+echo
+echo 'test #2 + htmlout'
+./diffpdb.py --htmlout 'test_data/2/str1.pdb' 'test_data/2/str2.pdb' > output/2_str1_vs_str2.html
 # identical
 echo
 echo 'test #3'

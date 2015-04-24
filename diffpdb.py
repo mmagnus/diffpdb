@@ -8,6 +8,12 @@ import sys
 import os
 import argparse
 
+PATH = os.path.abspath(__file__)
+if os.path.islink(PATH):
+    PATH = os.path.dirname(readlink(PATH)) + '/' # / don't forget
+else:
+    PATH = os.path.dirname(os.path.abspath(__file__)) + '/'
+
 try:
     from diffpdb_conf import DIFF_TOOL
 except ImportError:
@@ -40,6 +46,7 @@ def do_file(fn):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser('diffpdb.py')
     parser.add_argument('--names', help='take only atom residues names', action='store_true')
+    parser.add_argument('--htmlout', help='take only atom residues names', action='store_true')
     parser.add_argument('f1', help='file')     
     parser.add_argument('f2', help='file')     
 
@@ -55,4 +62,8 @@ if __name__ == '__main__':
         do_file(str1_fn)
         do_file(str2_fn)
 
-    os.system(' '.join([DIFF_TOOL, str1_fn + '.out', str2_fn + '.out']))
+    if args.htmlout:
+        cmd = 'diff -u %s %s | %s/lib/diff2html.py' % (str1_fn + '.out', str2_fn + '.out', PATH)
+        os.system(cmd)
+    else:
+        os.system(' '.join([DIFF_TOOL, str1_fn + '.out', str2_fn + '.out']))
