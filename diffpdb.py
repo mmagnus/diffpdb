@@ -26,7 +26,7 @@ def do_file_atom_res(fn):
 
     text_new = ''
     for l in open(fn):
-        if l.startswith('ATOM') or l.startswith('HETATM'):
+        if l.startswith('ATOM') or l.startswith('HETATM') or l.startswith('END') or l.startswith('TER'):
             text_new +=  l[12:20].strip() + '\n'
     open(fn + '.out', 'w').write(text_new)
 
@@ -36,9 +36,8 @@ def do_file(fn):
 
     text_new = ''
     for l in open(fn):
-        if l.startswith('ATOM') or l.startswith('HETATM'):
+        if l.startswith('ATOM') or l.startswith('HETATM') or l.startswith('END') or l.startswith('TER'):
             l = l[:31].strip()
-            print l
             text_new += l + '\n'
     open(fn + '.out', 'w').write(text_new)
 
