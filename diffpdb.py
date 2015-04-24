@@ -17,8 +17,7 @@ else:
 try:
     from diffpdb_conf import DIFF_TOOL
 except ImportError:
-    DIFF_TOOL = 'kompare'#'diff'
-
+    DIFF_TOOL = 'diff' ## kompare
 
 def do_file_atom_res(fn):
     """Take a file path, open the file, for each line take 
