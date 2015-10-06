@@ -10,7 +10,7 @@ import argparse
 
 PATH = os.path.abspath(__file__)
 if os.path.islink(PATH):
-    PATH = os.path.dirname(readlink(PATH)) + '/' # / don't forget
+    PATH = os.path.dirname(os.readlink(PATH)) + '/' # / don't forget
 else:
     PATH = os.path.dirname(os.path.abspath(__file__)) + '/'
 
